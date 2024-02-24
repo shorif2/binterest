@@ -6,7 +6,7 @@ import useAuth from "../../hooks/useAuth.jsx";
 const Login = () => {
   const [isLogin, setLogin] = useState(true);
   const [isModalOpen, setModalOpen] = useState(false);
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit } = useForm();
   const { login, createUser, googleSingIn } = useAuth();
 
   const toggleForm = () => {
