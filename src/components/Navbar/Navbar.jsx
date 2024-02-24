@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import avatar from "../../../public/binterest.png";
 
 import { useState } from "react";
@@ -18,15 +18,12 @@ const Navbar = () => {
         </Link>{" "}
       </li>
       <button className="bg-[#DBD9FF] px-7 rounded-[50px]">Create</button>
-      <Link className="p-2 bg-green-500 rounded-lg text-white" to="/dashboard">
-        Dashboard
-      </Link>
     </>
   );
   return (
     <div className="bg-[#635BFF0D]">
-      <div className="container mx-auto navbar gap-2 ">
-        <div className="navbar-start">
+      <div className="flex justify-center items-center gap-4 px-10 py-3">
+        <div className="flex justify-center items-center">
           {/* Dropdown */}
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -52,27 +49,28 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <NavLink>
+          {/* Dropdown */}
+          <div className="flex justify-center items-center gap-4">
             <div className="flex justify-center items-center gap-2">
               <img
                 className="w-10 h-10"
                 src="https://i.ibb.co/yqjZhy0/pinterest-logo-png-2004.png"
                 alt=""
               />
-              <p className="normal-case text-xl font-medium">BINTEREST</p>
+              {/* <p className="normal-case text-xl font-medium">BINTEREST</p> */}
             </div>
-          </NavLink>
+            <ul className="menu menu-horizontal px-1 gap-6">{navLinks}</ul>
+          </div>
         </div>
-        <div className="navbar-center hidden lg:flex ">
-          <ul className="menu menu-horizontal px-1 gap-6">{navLinks}</ul>
+        <div className="navbar-center hidden lg:flex flex-grow">
+          <input
+            className="border w-full rounded-3xl px-6 py-2 text-sm "
+            type="text"
+            name=""
+            placeholder="Search..."
+            id=""
+          />
         </div>
-        <input
-          className="border rounded-3xl px-6 py-2 text-sm w-2/3"
-          type="text"
-          name=""
-          placeholder="Search..."
-          id=""
-        />
 
         {/* <div className="navbar-end">
                 {
@@ -90,8 +88,8 @@ const Navbar = () => {
 
         {user ? (
           <>
-            <div className="navbar-end">
-              <button className="border  rounded-[50px] inline-flex justify-center items-center font-medium text-white gap-4 pl-4">
+            <div className="flex justify-center items-center">
+              <button className="border bg-[#0A2540] text-white rounded-[50px] inline-flex justify-center items-center font-medium  gap-4 pl-4">
                 Saved
                 <span className="bg-red-500 rounded-full p-1.5">
                   <svg
@@ -157,7 +155,7 @@ const Navbar = () => {
             </div>
           </>
         ) : (
-          <div className="navbar-end">
+          <div className="">
             {" "}
             <Login></Login>
           </div>

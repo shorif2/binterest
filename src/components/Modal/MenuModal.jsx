@@ -10,9 +10,12 @@ const MenuModal = ({ logout }) => {
         >
           Profile
         </NavLink>
-        <button className="border-b w-48 text-start p-2 pl-4 font-medium hover:bg-green-500">
-          Setting
-        </button>
+        <NavLink
+          to="/dashboard"
+          className="border-b w-48 text-start p-2 pl-4 font-medium hover:bg-green-500"
+        >
+          Dashboard
+        </NavLink>
         <button
           onClick={logout}
           className="border-b w-48 text-start p-2 pl-4 font-medium hover:bg-green-500"
